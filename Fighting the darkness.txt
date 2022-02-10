@@ -1,0 +1,40 @@
+/*
+Given an array arr[] of size N representing the size of candles which reduce by 1 unit each day.
+The room is illuminated using the given N candles. Find the maximum number of days the room is without darkness.
+*/
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int maxdays(int arr[],int n){
+	int max=0;
+	for(int i=0;i<n;i++){
+		if(max>arr[i])
+		   continue;
+		else
+		   max=arr[i];
+	}
+	return max;
+}
+
+void printarray(int arr[],int n){
+	cout<<"The elements in the array are: "<<endl;
+	for(int i=0;i<n;i++){
+		cout<<arr[i];
+	}
+}
+
+int main(){
+	int n,arr[100],d;
+	cout<<"Enter the size of the array"<<endl;
+	cin>>n;
+	
+	cout<<"Enter the elements in an array"<<endl;
+	for(int i=0;i<n;i++){
+		cin>>arr[i];
+	}
+	
+	int max=maxdays(arr,n);
+	cout<<max;
+	//printarray(arr,n);
+}
